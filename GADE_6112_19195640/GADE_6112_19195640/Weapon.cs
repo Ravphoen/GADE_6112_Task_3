@@ -13,7 +13,7 @@ namespace GADE_6112_19195640
         protected int Range;       
         protected int Durability;
         protected int Cost;
-        protected int Type;
+        protected WeaponType Type;
         protected string Symbol;
         
         //properties (accessors)
@@ -37,7 +37,7 @@ namespace GADE_6112_19195640
             get { return Cost; }
             set { Cost = value; }
         }
-        public int TYPE
+        public WeaponType TYPE
         {
             get { return Type; }
             set { Type = value; }
@@ -48,7 +48,7 @@ namespace GADE_6112_19195640
             set { Symbol = value; }
         }
 
-        public Weapon(int _posx, int _posy, string Symbol ) : base(_posx, _posy, Symbol)
+        public Weapon(int _posx, int _posy, string Symbol) : base(_posx, _posy, Symbol)
         {
             
         }
