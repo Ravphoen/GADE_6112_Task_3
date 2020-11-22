@@ -24,10 +24,10 @@ namespace GADE_6112_19195640
 
     public enum WeaponType
     {
-        Dagger,
-        LongSword,
-        Bow,
-        Staff
+        Dagger = 1,
+        LongSword = 2,
+        Bow = 3,
+        Staff = 4
     }
 
     class GameEngine

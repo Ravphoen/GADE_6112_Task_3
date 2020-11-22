@@ -59,6 +59,7 @@
     <Compile Include="Map.cs" />
     <Compile Include="MeleeWeapon.cs" />
     <Compile Include="RangedWeapon.cs" />
+    <Compile Include="Shop.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

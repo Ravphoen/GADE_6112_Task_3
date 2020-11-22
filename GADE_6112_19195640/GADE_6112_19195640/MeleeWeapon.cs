@@ -13,8 +13,7 @@ namespace GADE_6112_19195640
             Dagger, 
             LongSword
         }
-
-        
+       
         //public MeleeWeapons MeleeWeaponType;
 
         public MeleeWeapon(WeaponType Type , string Symbol = "P", int _posx = 1, int _posy = 1 ) : base(Symbol, _posx, _posy)
