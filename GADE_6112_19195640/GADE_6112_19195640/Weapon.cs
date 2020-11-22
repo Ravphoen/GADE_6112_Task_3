@@ -15,6 +15,7 @@ namespace GADE_6112_19195640
         protected int Cost;
         protected WeaponType Type;
         protected string Symbol;
+        protected string typeWeapon;
         
         //properties (accessors)
         public int DAMAGE
