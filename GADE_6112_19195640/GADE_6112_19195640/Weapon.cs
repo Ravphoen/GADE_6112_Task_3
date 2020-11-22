@@ -48,7 +48,7 @@ namespace GADE_6112_19195640
             set { Symbol = value; }
         }
 
-        public Weapon(int _posx, int _posy, string Symbol) : base(_posx, _posy, Symbol)
+        public Weapon(string Symbol, int _posx = 1, int _posy =  1) : base(_posx, _posy, Symbol)
         {
             
         }

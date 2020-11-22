@@ -13,6 +13,7 @@ namespace GADE_6112_19195640
         Left,
         Right
     }
+
     public enum TileType
     {
         Hero,
@@ -24,7 +25,9 @@ namespace GADE_6112_19195640
     public enum WeaponType
     {
         Dagger,
-        LongSword
+        LongSword,
+        Bow,
+        Staff
     }
 
     class GameEngine
