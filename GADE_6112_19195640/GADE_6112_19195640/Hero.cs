@@ -70,10 +70,20 @@ namespace GADE_6112_19195640
 
         public override string ToString()
         {
+            string weaponName;
+            if (weapon == null)
+            {
+                weaponName = "Bare Hands";
+            }
+            else
+            {
+                weaponName = weapon.TYPE.ToString();
+            }
+
             return "Player Stats:\n"
                 + "HP:" + HP + "/" + MAXHP + "\nDamage:"
                 + DAMAGE + "\n[" + POSX + "," + POSY + "]\n"
-                +"Gold: " +GOLDPURSE;       
+                +"Gold: " +GOLDPURSE+"Current Weapon: "+ weaponName;       
         }
     }
 }

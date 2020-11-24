@@ -192,7 +192,7 @@ namespace GADE_6112_19195640
                 {
                     if (x==0 || y ==0 || x== MapWidth - 1|| y == MapHeight - 1)
                     {
-                        map[x, y] = new Obstacle(x,y, "X");
+                        map[x, y] = new Obstacle(x ,y , "X");
                     }
                 }
             }

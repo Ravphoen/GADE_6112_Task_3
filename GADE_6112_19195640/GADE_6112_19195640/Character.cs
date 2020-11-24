@@ -19,6 +19,7 @@ namespace GADE_6112_19195640
         protected Tile[] characterVision = new Tile[4];
         protected movement move;
         protected int goldpurse;
+        protected Weapon weapon;
 
 
         //properties (accessors)
@@ -51,6 +52,11 @@ namespace GADE_6112_19195640
         {
             get { return goldpurse; }
             set { goldpurse = value; }
+        }
+        public Weapon WEAPON
+        {
+            get { return weapon; }
+            set { weapon = value; }
         }
 
         public Character(int _posx, int _posy, string _symbol):base(_posx, _posy, _symbol)
@@ -129,6 +135,14 @@ namespace GADE_6112_19195640
                 Gold g = (Gold)i;
                 goldpurse += g.GOLDAMOUNT;
             }
+            if (i is Weapon)
+            {
+                Equip(i as Weapon);
+            }
+        }
+        public void Equip(Weapon w)
+        {
+            weapon = w;
         }
     }
 }

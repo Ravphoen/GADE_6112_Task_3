@@ -15,6 +15,7 @@ namespace GADE_6112_19195640
             base.symbol = _symbol;
             base.damage = _damage;
             base.hp = _hp;
+            base.weapon = new MeleeWeapon(WeaponType.LongSword, "7");
             
         }
 

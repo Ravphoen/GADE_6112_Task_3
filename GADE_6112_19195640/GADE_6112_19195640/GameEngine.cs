@@ -101,6 +101,14 @@ namespace GADE_6112_19195640
                         }
                     }
                 }
+                //leader movement
+                else if (e is Leader)
+                {
+                    if (e.CheckRange(m.PLAYER))
+                    {
+                        e.Attack(m.PLAYER);
+                    }
+                }
                 m.UpdateMap();
             }
             

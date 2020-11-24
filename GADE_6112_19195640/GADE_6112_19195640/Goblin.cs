@@ -11,7 +11,7 @@ namespace GADE_6112_19195640
     {
         public Goblin(int _posx, int _posy, string _symbol = "G", int _damage = 1, int _hp = 10):base(_posx, _posy, _symbol, _damage, _hp)
         {
-
+            base.weapon = new MeleeWeapon(WeaponType.Dagger, "D");
         }
 
         public override movement ReturnMove(movement move = 0)
@@ -76,9 +76,21 @@ namespace GADE_6112_19195640
             }
             return move;
         }
+        //goblin tostring
         public override string ToString()
         {
-            return "Goblin at [" + POSX + "," + POSY + "] Deals:(" + DAMAGE + ") HP:" + HP;
+            string weaponName;
+            string output;
+            if (weapon == null)
+            {
+                output = "Bare Handed goblin at [" + POSX + "," + POSY + "] Deals:(" + DAMAGE + ") HP:" + HP;
+            }
+            else
+            {
+                output = "Goblin at [" + POSX + "," + POSY + "] Deals:(" + DAMAGE + ") HP:" + HP+ "Equiped with "+weapon.TYPE.ToString();
+            }
+
+            return output;
         }
     }
 }
