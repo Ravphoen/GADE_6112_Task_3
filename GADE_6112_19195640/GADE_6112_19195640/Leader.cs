@@ -17,6 +17,7 @@ namespace GADE_6112_19195640
             base.hp = _hp;
             base.weapon = new MeleeWeapon(WeaponType.LongSword, "7");
             leadertarget = target;
+            base.goldpurse = 2;
             
         }
 
@@ -50,6 +51,10 @@ namespace GADE_6112_19195640
                 {
                     if (CHARACTERVISION[0] is EmptyTile || CHARACTERVISION[0] is Item && !(CHARACTERVISION[0] is Hero))
                     {
+                        if (CHARACTERVISION[0] is Item)
+                        {
+                            PickUp(CHARACTERVISION[0] as Item);
+                        }
                         move = movement.Left;
                         POSX--;
                     }
@@ -62,6 +67,10 @@ namespace GADE_6112_19195640
                 {
                     if (CHARACTERVISION[1] is EmptyTile || CHARACTERVISION[1] is Item && !(CHARACTERVISION[1] is Hero))
                     {
+                        if (CHARACTERVISION[1] is Item)
+                        {
+                            PickUp(CHARACTERVISION[1] as Item);
+                        }
                         move = movement.Up;
                         POSY--;
                     }
@@ -74,6 +83,10 @@ namespace GADE_6112_19195640
                 {
                     if (CHARACTERVISION[2] is EmptyTile || CHARACTERVISION[2] is Item && !(CHARACTERVISION[2] is Hero))
                     {
+                        if (CHARACTERVISION[2] is Item)
+                        {
+                            PickUp(CHARACTERVISION[2] as Item);
+                        }
                         move = movement.Right;
                         POSX++;
                     }
@@ -86,6 +99,10 @@ namespace GADE_6112_19195640
                 {
                     if (CHARACTERVISION[3] is EmptyTile || CHARACTERVISION[3] is Item && !(CHARACTERVISION[3] is Hero))
                     {
+                        if (CHARACTERVISION[3] is Item)
+                        {
+                            PickUp(CHARACTERVISION[3] as Item);
+                        }
                         move = movement.Down;
                         POSY++;
                     }
@@ -115,12 +132,20 @@ namespace GADE_6112_19195640
             {
                 if (xposDifference < 0 && CHARACTERVISION[2] is EmptyTile || CHARACTERVISION[2] is Item && !(CHARACTERVISION[2] is Hero))
                 {
+                    if (CHARACTERVISION[2] is Item)
+                    {
+                        PickUp(CHARACTERVISION[2] as Item);
+                    }
                     move = movement.Right;
-                    base.posx++;
+                    base.posx++;   
                 }
 
                 if (xposDifference > 0 && CHARACTERVISION[0] is EmptyTile || CHARACTERVISION[0] is Item && !(CHARACTERVISION[0] is Hero))
                 {
+                    if (CHARACTERVISION[0] is Item)
+                    {
+                        PickUp(CHARACTERVISION[0] as Item);
+                    }
                     move = movement.Left;
                     base.posx--;
                 }
@@ -130,11 +155,19 @@ namespace GADE_6112_19195640
             {
                 if (yposDifference < 0 && CHARACTERVISION[1] is EmptyTile || CHARACTERVISION[1] is Item && !(CHARACTERVISION[1] is Hero))
                 {
+                    if (CHARACTERVISION[1] is Item)
+                    {
+                        PickUp(CHARACTERVISION[1] as Item);
+                    }
                     move = movement.Up;
                     base.posy++;
                 }
                 if (yposDifference > 0 && CHARACTERVISION[3] is EmptyTile || CHARACTERVISION[3] is Item && !(CHARACTERVISION[3] is Hero))
                 {
+                    if (CHARACTERVISION[3] is Item)
+                    {
+                        PickUp(CHARACTERVISION[3] as Item);
+                    }
                     move = movement.Down;
                     base.posy--;
                 }
@@ -148,11 +181,11 @@ namespace GADE_6112_19195640
             string output;
             if (weapon == null)
             {
-                output = "Bare Handed leader at [" + POSX + "," + POSY + "] Deals:(" + DAMAGE + ") HP:" + HP;
+                output = "Bare Handed leader at [" + POSX + "," + POSY + "] Deals:(" + DAMAGE + ") HP:" + HP + "Has " + GOLDPURSE + "gold";
             }
             else
             {
-                output = "Leader at [" + POSX + "," + POSY + "] Deals:(" + DAMAGE + ") HP:" + HP + "Equiped with " + weapon.TYPE.ToString();
+                output = "Leader at [" + POSX + "," + POSY + "] Deals:(" + DAMAGE + ") HP:" + HP + "Equiped with " + weapon.TYPE.ToString() + "Has " + GOLDPURSE + "gold";
             }
 
             return output;

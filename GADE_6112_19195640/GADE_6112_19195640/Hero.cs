@@ -14,6 +14,7 @@ namespace GADE_6112_19195640
             HP = _hp;
             DAMAGE = _damage;
             MAXHP = _hp;
+            base.goldpurse = 0;
         }
         public override movement ReturnMove(movement move)
         {
@@ -84,7 +85,7 @@ namespace GADE_6112_19195640
             return "Player Stats:\n"
                 + "HP:" + HP + "/" + MAXHP + "\nDamage:"
                 + DAMAGE + "\n[" + POSX + "," + POSY + "]\n"
-                +"Gold: " +GOLDPURSE+"Current Weapon: "+ weaponName;       
+                +"Gold: " +GOLDPURSE+"Current Weapon: "+ weaponName ;       
         }
     }
 }

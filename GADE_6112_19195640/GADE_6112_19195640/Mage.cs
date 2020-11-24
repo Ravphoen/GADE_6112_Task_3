@@ -14,6 +14,8 @@ namespace GADE_6112_19195640
             DAMAGE = _damage;
             HP = _hp;
             MAXHP = _hp;
+
+            base.goldpurse = 3;
         }
 
         public override movement ReturnMove(movement move = 0)
@@ -35,7 +37,12 @@ namespace GADE_6112_19195640
 
         public override string ToString()
         {
-            return "Mage at [" + POSX + "," + POSY + "] Deals:(" + DAMAGE + ") HP:" + HP;
+            return "Mage at [" + POSX + "," + POSY + "] Deals:(" + DAMAGE + ") HP:" + HP + "Has "+ GOLDPURSE+"gold";
+        }
+        //mages loot method
+        public override void Loot(Character target)
+        {
+            GOLDPURSE += target.GOLDPURSE;
         }
     }
 }

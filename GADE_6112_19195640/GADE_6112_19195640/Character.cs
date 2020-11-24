@@ -68,6 +68,10 @@ namespace GADE_6112_19195640
         public virtual void Attack(Character target)
         {
             target.HP -= damage;
+            if (target.hp <= 0)
+            {
+                Loot(target);
+            }
         }
         public bool IsDead()
         {
@@ -143,6 +147,12 @@ namespace GADE_6112_19195640
         public void Equip(Weapon w)
         {
             weapon = w;
+        }
+        //looting target
+        public virtual void Loot(Character target)
+        {
+            GOLDPURSE += target.GOLDPURSE;
+            Equip(target.WEAPON);
         }
     }
 }
