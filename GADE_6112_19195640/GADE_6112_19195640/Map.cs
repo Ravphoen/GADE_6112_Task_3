@@ -108,7 +108,7 @@ namespace GADE_6112_19195640
                 }
                 else
                 {
-                    return new Leader(randomX, randomY);
+                    return new Leader(randomX, randomY, player);
                 }
             }
             //spawning weapons

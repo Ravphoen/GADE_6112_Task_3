@@ -78,6 +78,7 @@ namespace GADE_6112_19195640
             else
             {
                 weaponName = weapon.TYPE.ToString();
+
             }
 
             return "Player Stats:\n"

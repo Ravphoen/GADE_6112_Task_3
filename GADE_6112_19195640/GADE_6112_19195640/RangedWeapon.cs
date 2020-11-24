@@ -26,6 +26,7 @@ namespace GADE_6112_19195640
                 base.Durability = 4;
                 base.Cost = 6;
                 base.typeWeapon = "Bow";
+                base.Type = WeaponType.Bow;
 
             }
             if (Type == WeaponType.Staff)
@@ -35,6 +36,7 @@ namespace GADE_6112_19195640
                 base.Durability = 3;
                 base.Cost = 7;
                 base.typeWeapon = "Staff";
+                base.Type = WeaponType.Staff;
             }
 
             weaponType = Type;

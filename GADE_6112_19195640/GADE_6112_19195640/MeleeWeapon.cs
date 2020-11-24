@@ -26,6 +26,7 @@ namespace GADE_6112_19195640
                 base.Durability = 10;
                 base.Cost = 3;
                 base.typeWeapon = "Dagger";
+                base.Type = WeaponType.Dagger;
 
             }
             if (Type == WeaponType.LongSword)
@@ -35,6 +36,7 @@ namespace GADE_6112_19195640
                 base.Durability = 6;
                 base.Cost = 5;
                 base.typeWeapon = "Longsword";
+                base.Type = WeaponType.LongSword;
             }
 
             weaponType = Type;

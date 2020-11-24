@@ -8,7 +8,7 @@ namespace GADE_6112_19195640
 {
     class Leader : Enemy
     {
-        public Leader(int _posx, int _posy, string _symbol = "L", int _damage = 2, int _hp = 20) : base(_posx, _posy, _symbol, _damage, _hp)
+        public Leader(int _posx, int _posy, Hero target, string _symbol = "L",  int _damage = 2, int _hp = 20) : base(_posx, _posy, _symbol, _damage, _hp)
         {
             base.posx = _posx;
             base.posy = _posy;
@@ -16,6 +16,7 @@ namespace GADE_6112_19195640
             base.damage = _damage;
             base.hp = _hp;
             base.weapon = new MeleeWeapon(WeaponType.LongSword, "7");
+            leadertarget = target;
             
         }
 
@@ -47,7 +48,7 @@ namespace GADE_6112_19195640
             {
                 if (randomdir == 0)
                 {
-                    if (CHARACTERVISION[0] is EmptyTile)
+                    if (CHARACTERVISION[0] is EmptyTile || CHARACTERVISION[0] is Item && !(CHARACTERVISION[0] is Hero))
                     {
                         move = movement.Left;
                         POSX--;
@@ -59,7 +60,7 @@ namespace GADE_6112_19195640
                 }
                 else if (randomdir == 1)
                 {
-                    if (CHARACTERVISION[1] is EmptyTile)
+                    if (CHARACTERVISION[1] is EmptyTile || CHARACTERVISION[1] is Item && !(CHARACTERVISION[1] is Hero))
                     {
                         move = movement.Up;
                         POSY--;
@@ -71,7 +72,7 @@ namespace GADE_6112_19195640
                 }
                 else if (randomdir == 2)
                 {
-                    if (CHARACTERVISION[2] is EmptyTile)
+                    if (CHARACTERVISION[2] is EmptyTile || CHARACTERVISION[2] is Item && !(CHARACTERVISION[2] is Hero))
                     {
                         move = movement.Right;
                         POSX++;
@@ -83,7 +84,7 @@ namespace GADE_6112_19195640
                 }
                 else if (randomdir == 3)
                 {
-                    if (CHARACTERVISION[3] is EmptyTile)
+                    if (CHARACTERVISION[3] is EmptyTile || CHARACTERVISION[3] is Item && !(CHARACTERVISION[3] is Hero))
                     {
                         move = movement.Down;
                         POSY++;
@@ -112,13 +113,13 @@ namespace GADE_6112_19195640
 
             if (Math.Abs(xposDifference) >= Math.Abs(yposDifference))
             {
-                if (xposDifference < 0 && CHARACTERVISION[2] is EmptyTile)
+                if (xposDifference < 0 && CHARACTERVISION[2] is EmptyTile || CHARACTERVISION[2] is Item && !(CHARACTERVISION[2] is Hero))
                 {
                     move = movement.Right;
                     base.posx++;
                 }
 
-                if (xposDifference > 0 && CHARACTERVISION[0] is EmptyTile)
+                if (xposDifference > 0 && CHARACTERVISION[0] is EmptyTile || CHARACTERVISION[0] is Item && !(CHARACTERVISION[0] is Hero))
                 {
                     move = movement.Left;
                     base.posx--;
@@ -127,18 +128,34 @@ namespace GADE_6112_19195640
             }
             if (Math.Abs(yposDifference) > Math.Abs(xposDifference))
             {
-                if (yposDifference < 0 && CHARACTERVISION[1] is EmptyTile)
+                if (yposDifference < 0 && CHARACTERVISION[1] is EmptyTile || CHARACTERVISION[1] is Item && !(CHARACTERVISION[1] is Hero))
                 {
                     move = movement.Up;
                     base.posy++;
                 }
-                if (yposDifference > 0 && CHARACTERVISION[3] is EmptyTile)
+                if (yposDifference > 0 && CHARACTERVISION[3] is EmptyTile || CHARACTERVISION[3] is Item && !(CHARACTERVISION[3] is Hero))
                 {
                     move = movement.Down;
                     base.posy--;
                 }
             }
             return move;
-        }   
+        }
+        //leader tostring
+        public override string ToString()
+        {
+            string weaponName;
+            string output;
+            if (weapon == null)
+            {
+                output = "Bare Handed leader at [" + POSX + "," + POSY + "] Deals:(" + DAMAGE + ") HP:" + HP;
+            }
+            else
+            {
+                output = "Leader at [" + POSX + "," + POSY + "] Deals:(" + DAMAGE + ") HP:" + HP + "Equiped with " + weapon.TYPE.ToString();
+            }
+
+            return output;
+        }
     }
 }
