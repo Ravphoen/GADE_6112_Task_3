@@ -87,14 +87,18 @@ namespace GADE_6112_19195640
             }
             else if(tiletype == TileType.Enemy)
             {
-                int temp = r.Next(1, 3);
+                int temp = r.Next(1, 4);
                 if (temp == 1)
                 {
                     return new Goblin(randomX, randomY);
                 }
-                else
+                else if (temp == 2)
                 {
                     return new Mage(randomX, randomY);
+                }
+                else
+                {
+                    return new Leader(randomX, randomY);
                 }
             }
             else //spawning gold

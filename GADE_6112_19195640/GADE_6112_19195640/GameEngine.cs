@@ -19,7 +19,7 @@ namespace GADE_6112_19195640
         Hero,
         Enemy,
         Gold,
-        Weapon
+        Weapon,
     }
 
     public enum WeaponType
