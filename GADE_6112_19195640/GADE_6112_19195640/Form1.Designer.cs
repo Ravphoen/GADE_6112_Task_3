@@ -45,6 +45,11 @@
             this.AttackButton = new System.Windows.Forms.Button();
             this.LOADbtn = new System.Windows.Forms.Button();
             this.SAVEbtn = new System.Windows.Forms.Button();
+            this.buybtn = new System.Windows.Forms.Button();
+            this.shoplbl = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.infolbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // MAPBOX
@@ -177,7 +182,7 @@
             // 
             // LOADbtn
             // 
-            this.LOADbtn.Location = new System.Drawing.Point(884, 427);
+            this.LOADbtn.Location = new System.Drawing.Point(871, 427);
             this.LOADbtn.Name = "LOADbtn";
             this.LOADbtn.Size = new System.Drawing.Size(99, 23);
             this.LOADbtn.TabIndex = 18;
@@ -187,7 +192,7 @@
             // 
             // SAVEbtn
             // 
-            this.SAVEbtn.Location = new System.Drawing.Point(771, 427);
+            this.SAVEbtn.Location = new System.Drawing.Point(760, 427);
             this.SAVEbtn.Name = "SAVEbtn";
             this.SAVEbtn.Size = new System.Drawing.Size(99, 23);
             this.SAVEbtn.TabIndex = 19;
@@ -195,11 +200,62 @@
             this.SAVEbtn.UseVisualStyleBackColor = true;
             this.SAVEbtn.Click += new System.EventHandler(this.SAVEbtn_Click);
             // 
+            // buybtn
+            // 
+            this.buybtn.Location = new System.Drawing.Point(1124, 122);
+            this.buybtn.Name = "buybtn";
+            this.buybtn.Size = new System.Drawing.Size(75, 23);
+            this.buybtn.TabIndex = 20;
+            this.buybtn.Text = "Buy Item";
+            this.buybtn.UseVisualStyleBackColor = true;
+            this.buybtn.Click += new System.EventHandler(this.buybtn_Click);
+            // 
+            // shoplbl
+            // 
+            this.shoplbl.AutoSize = true;
+            this.shoplbl.Location = new System.Drawing.Point(1145, 34);
+            this.shoplbl.Name = "shoplbl";
+            this.shoplbl.Size = new System.Drawing.Size(32, 13);
+            this.shoplbl.TabIndex = 21;
+            this.shoplbl.Text = "Shop";
+            this.shoplbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(1057, 77);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(214, 21);
+            this.comboBox1.TabIndex = 22;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(1057, 262);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(214, 159);
+            this.richTextBox1.TabIndex = 23;
+            this.richTextBox1.Text = "";
+            // 
+            // infolbl
+            // 
+            this.infolbl.AutoSize = true;
+            this.infolbl.Location = new System.Drawing.Point(1137, 246);
+            this.infolbl.Name = "infolbl";
+            this.infolbl.Size = new System.Drawing.Size(48, 13);
+            this.infolbl.TabIndex = 24;
+            this.infolbl.Text = "Item Info";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 462);
+            this.ClientSize = new System.Drawing.Size(1310, 462);
+            this.Controls.Add(this.infolbl);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.shoplbl);
+            this.Controls.Add(this.buybtn);
             this.Controls.Add(this.SAVEbtn);
             this.Controls.Add(this.LOADbtn);
             this.Controls.Add(this.AttackButton);
@@ -240,6 +296,11 @@
         private System.Windows.Forms.Button AttackButton;
         private System.Windows.Forms.Button LOADbtn;
         private System.Windows.Forms.Button SAVEbtn;
+        private System.Windows.Forms.Button buybtn;
+        private System.Windows.Forms.Label shoplbl;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label infolbl;
     }
 }
 

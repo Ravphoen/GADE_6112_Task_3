@@ -13,13 +13,22 @@ namespace GADE_6112_19195640
     public partial class Form1 : Form
     {
         GameEngine ge;
+        Shop shop;
         List<Enemy> enemies = new List<Enemy>();
+
         public Form1()
         {
             InitializeComponent();
             ge = new GameEngine();
             DisplayMap();
             DisplayPlayerStats();
+            shop = new Shop(ge.M.PLAYER);
+
+            //combobox values for shop
+            comboBox1.Items.Add(shop.DisplayWeapon(0));
+            comboBox1.Items.Add(shop.DisplayWeapon(1));
+            comboBox1.Items.Add(shop.DisplayWeapon(2));
+            
         }
 
         public void DisplayMap()
@@ -111,7 +120,6 @@ namespace GADE_6112_19195640
         {
 
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -137,6 +145,28 @@ namespace GADE_6112_19195640
                     enemies.Add(en);
                     CBenemies.Items.Add(en.ToString());
                 }
+            }
+        }
+
+        private void buybtn_Click(object sender, EventArgs e)
+        {
+            shop.Buy(comboBox1.SelectedIndex);
+            comboBox1.Items.Clear();
+            comboBox1.Items.Add(shop.DisplayWeapon(0));
+            comboBox1.Items.Add(shop.DisplayWeapon(1));
+            comboBox1.Items.Add(shop.DisplayWeapon(2));
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            richTextBox1.Text = shop.DisplayWeapon(comboBox1.SelectedIndex);
+            if (!shop.CanBuy(comboBox1.SelectedIndex))
+            {
+                buybtn.Enabled = false;
+            }
+            else
+            {
+                buybtn.Enabled = true;
             }
         }
     }

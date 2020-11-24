@@ -14,12 +14,13 @@ namespace GADE_6112_19195640
 
         public Shop(Character _buyer)
         {
+            buyer = _buyer;
+            r = new Random();
             weapons = new Weapon[3];
             //add random weapons (method)
             weapons[0] = RandomWeapon();
             weapons[1] = RandomWeapon();
             weapons[2] = RandomWeapon();
-            weapons[3] = RandomWeapon();
         }
 
         public Weapon RandomWeapon()
