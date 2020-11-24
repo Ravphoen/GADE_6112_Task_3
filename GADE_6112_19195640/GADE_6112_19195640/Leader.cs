@@ -8,7 +8,7 @@ namespace GADE_6112_19195640
 {
     class Leader : Enemy
     {
-        public Leader(int _posx, int _posy, string _symbol, int _damage = 2, int _hp = 20) : base(_posx, _posy, _symbol, _damage, _hp)
+        public Leader(int _posx, int _posy, string _symbol = "L", int _damage = 2, int _hp = 20) : base(_posx, _posy, _symbol, _damage, _hp)
         {
             base.posx = _posx;
             base.posy = _posy;

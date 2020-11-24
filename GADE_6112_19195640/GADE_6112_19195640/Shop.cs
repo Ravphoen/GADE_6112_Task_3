@@ -32,7 +32,7 @@ namespace GADE_6112_19195640
                     weapon = new MeleeWeapon(WeaponType.Dagger, "D");
                     break;
                 case 2:
-                    weapon = new MeleeWeapon(WeaponType.LongSword, "L");
+                    weapon = new MeleeWeapon(WeaponType.LongSword, "7");
                     break;
                 case 3:
                     weapon = new RangedWeapon(WeaponType.Bow, "B");

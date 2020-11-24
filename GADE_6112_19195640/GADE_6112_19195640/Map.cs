@@ -64,9 +64,18 @@ namespace GADE_6112_19195640
             }
             for (int i = 0; i < items.Length; i++)
             {
-                items[i] = (Item)Create(TileType.Gold);
+                int temp = r.Next(1, 3);
+                if (temp == 1)
+                {
+                    items[i] = (Item)Create(TileType.Gold);
+                }
+                if (temp == 2)
+                {
+                    items[i] = (Item)Create(TileType.Weapon);
+                }
                 map[items[i].POSX, items[i].POSY] = items[i];
             }
+
             UpdateVision();
         }
         //methods
@@ -85,6 +94,7 @@ namespace GADE_6112_19195640
                 player = new Hero(randomX, randomY, 100);//player hp assigned here!
                 return player;
             }
+            //added leader spawns
             else if(tiletype == TileType.Enemy)
             {
                 int temp = r.Next(1, 4);
@@ -101,7 +111,28 @@ namespace GADE_6112_19195640
                     return new Leader(randomX, randomY);
                 }
             }
-            else //spawning gold
+            //spawning weapons
+            else if (tiletype == TileType.Weapon)
+            {
+                int temp = r.Next(1, 5);
+                if (temp == 1)
+                {
+                    return new MeleeWeapon(WeaponType.Dagger, "D", randomX, randomY);
+                }
+                else if (temp == 2)
+                {
+                    return new MeleeWeapon(WeaponType.LongSword, "7", randomX, randomY);
+                }
+                else if(temp == 3)
+                {
+                    return new RangedWeapon(WeaponType.Bow, "B", randomX, randomY);
+                }
+                else 
+                {
+                    return new RangedWeapon(WeaponType.Staff, "S", randomX, randomY);
+                }
+            }
+            else 
             {
                 return new Gold(randomX, randomY);
             }
