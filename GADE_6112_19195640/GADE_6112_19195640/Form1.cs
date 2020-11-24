@@ -155,6 +155,7 @@ namespace GADE_6112_19195640
             comboBox1.Items.Add(shop.DisplayWeapon(0));
             comboBox1.Items.Add(shop.DisplayWeapon(1));
             comboBox1.Items.Add(shop.DisplayWeapon(2));
+            buybtn.Enabled = false;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
